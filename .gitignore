@@ -1,0 +1,6 @@
+remote_pycharm/Dockerfile
+get_pycharm/tmp/
+get_pycharm/src/
+get_pycharm/compose.yml
+get_pycharm/Dockerfile
+build-data/pycharm.tar.xz
