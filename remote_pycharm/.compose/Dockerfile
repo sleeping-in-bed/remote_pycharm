@@ -1,4 +1,4 @@
-FROM wantodie/build-data:latest AS extract
+FROM wantodie/build-data:2024.1.7 AS extract
 RUN tar -xf pycharm.tar.xz
 
 
@@ -12,7 +12,7 @@ ARG BUILD_DATA_PATH=/build-data/pycharm
 ARG CACHE_RELPATH=.cache/JetBrains
 ARG LOCAL_RELPATH=.local/share/JetBrains
 ARG CONFIG_RELPATH=.config/JetBrains
-ARG PYCHARM_RELPATH=${JETBRAINS_RELPATH}/RemoteDev/dist/52c7d266bab24_pycharm-professional-2024.1.7/bin/pycharm.sh
+ARG PYCHARM_PATH=${HOME}/${CACHE_RELPATH}/RemoteDev/dist/52c7d266bab24_pycharm-professional-2024.1.7/bin/pycharm.sh
 
 # if possible, use --no-install-recommends
 RUN apt update &&\
@@ -41,7 +41,7 @@ RUN sed -i 's/^#PermitRootLogin.*/PermitRootLogin yes/' /etc/ssh/sshd_config &&\
     # set the nonprivileged user's password
     echo ${USER_NAME}:${PASSWORD} | chpasswd &&\
     # make a symbolic link for pycharm to make it easier to access
-    ln -s ${HOME}/${PYCHARM_RELPATH} /usr/local/bin/pycharm &&\
+    ln -s ${PYCHARM_PATH} /usr/local/bin/pycharm &&\
     chown -R ${USER_NAME}:${USER_NAME} ${HOME} &&\
     chmod 750 ${HOME} &&\
     rm -rf /tmp/* &&\

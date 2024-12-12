@@ -1,3 +1,3 @@
 #!/bin/bash
-tar -c ./tmp/pycharm/ | xz -9 -T0 -v > ./tmp/pycharm.tar.xz
+tar -c -C tmp pycharm | xz -9 -T0 -ve > ./tmp/pycharm.tar.xz
 exec bash

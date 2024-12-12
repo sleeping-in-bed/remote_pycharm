@@ -5,5 +5,6 @@ if [ -z "$TAG" ]; then
     TAG="latest"
 fi
 
-docker build -t "wantodie/build-data:$TAG" .
+docker push "wantodie/build-data:$TAG"
 exec bash
+

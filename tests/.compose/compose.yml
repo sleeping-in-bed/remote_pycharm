@@ -1,0 +1,12 @@
+services:
+  {SERVICE}:
+    image: {BASE_IMAGE}
+    ports:
+      - 22
+    restart: unless-stopped
+    environment:
+      - DISPLAY=unix$DISPLAY
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./src:{PROJECT_DIR}
+   

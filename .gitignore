@@ -4,3 +4,5 @@ get_pycharm/src/
 get_pycharm/compose.yml
 get_pycharm/Dockerfile
 build-data/pycharm.tar.xz
+tests/src
+tests/compose.yml
