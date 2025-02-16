@@ -1,8 +1,11 @@
-remote_pycharm/Dockerfile
-get_pycharm/tmp/
-get_pycharm/src/
-get_pycharm/compose.yml
-get_pycharm/Dockerfile
-build-data/pycharm.tar.xz
+__pycache__
+.idea
+
+build_dev-container/Dockerfile
+get_data/tmp/
+get_data/src/
+get_data/compose.yml
+get_data/Dockerfile
+build-data/data.tar.xz
 tests/src
 tests/compose.yml
